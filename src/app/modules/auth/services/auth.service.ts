@@ -5,7 +5,9 @@ import { UserModel } from '../models/user.model';
 import { AuthModel } from '../models/auth.model';
 import { AuthHTTPService } from './auth-http';
 import { environment } from 'src/environments/environment';
+import { JwtHelperService } from "@auth0/angular-jwt";
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 export type UserType = UserModel | undefined;
 
@@ -16,12 +18,16 @@ export class AuthService implements OnDestroy {
   // private fields
   private unsubscribe: Subscription[] = []; // Read more: => https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
   private authLocalStorageToken = `${environment.appVersion}-${environment.USERDATA_KEY}`;
+  private jwtHelper = new JwtHelperService();
+  showLoading: boolean;
+
 
   // public fields
   currentUser$: Observable<UserType>;
   isLoading$: Observable<boolean>;
   currentUserSubject: BehaviorSubject<UserType>;
   isLoadingSubject: BehaviorSubject<boolean>;
+  isConnected: Boolean;
 
   get currentUserValue(): UserType {
     return this.currentUserSubject.value;
@@ -44,19 +50,26 @@ export class AuthService implements OnDestroy {
   }
 
   // public methods
-  login(email: string, password: string): Observable<UserType> {
+  login(email: string, password: string): void {
     this.isLoadingSubject.next(true);
-    return this.authHttpService.login(email, password).pipe(
-      map((auth: AuthModel) => {
-        const result = this.setAuthFromLocalStorage(auth);
-        return result;
-      }),
-      switchMap(() => this.getUserByToken()),
-      catchError((err) => {
-        console.error('err', err);
-        return of(undefined);
-      }),
-      finalize(() => this.isLoadingSubject.next(false))
+     this.authHttpService.login(email, password).subscribe(
+      (response) => {
+        this.authHttpService.addTokenToCache(response.headers.get('Jwt-Token') || '');
+        console.log(response.headers.get('Jwt-Token'))
+        this.authHttpService.addUserToCache(response.body!);
+        this.isConnected = true;
+        if (response.body != null){
+          this.router.navigateByUrl('/dashboard');
+        }else {
+          console.log('erreur')
+        }
+        this.showLoading = false;
+        console.log(response);
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+        this.showLoading = false;
+      }
     );
   }
 
@@ -65,6 +78,17 @@ export class AuthService implements OnDestroy {
     this.router.navigate(['/auth/login'], {
       queryParams: {},
     });
+  }
+
+  isUserLoggedIn(): boolean {
+    if (this.authHttpService.getTokenFromCache() && this.authHttpService.getUserFromCache() && 
+        this.jwtHelper.decodeToken(this.authHttpService.getTokenFromCache()).sub && 
+        !this.jwtHelper.isTokenExpired(this.authHttpService.getTokenFromCache())) {
+          return true;
+    } else {
+      this.authHttpService.logOut();
+      return false;
+    }
   }
 
   getUserByToken(): Observable<UserType> {
@@ -88,8 +112,8 @@ export class AuthService implements OnDestroy {
   }
 
   // need create new user then login
-  registration(user: UserModel): Observable<any> {
-    this.isLoadingSubject.next(true);
+  registration(user: UserModel) {
+    /*this.isLoadingSubject.next(true);
     return this.authHttpService.createUser(user).pipe(
       map(() => {
         this.isLoadingSubject.next(false);
@@ -100,7 +124,7 @@ export class AuthService implements OnDestroy {
         return of(undefined);
       }),
       finalize(() => this.isLoadingSubject.next(false))
-    );
+    );*/
   }
 
   forgotPassword(email: string): Observable<boolean> {

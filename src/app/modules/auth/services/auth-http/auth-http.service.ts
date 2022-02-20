@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { JwtHelperService } from "@auth0/angular-jwt";
 import { UserModel } from '../../models/user.model';
 import { environment } from '../../../../../environments/environment';
 import { AuthModel } from '../../models/auth.model';
 
-const API_USERS_URL = `${environment.apiUrl}/auth`;
+const API_USERS_URL = `${environment.apiUrl}/user`;
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthHTTPService {
+  private jwtHelper = new JwtHelperService();
   constructor(private http: HttpClient) {}
 
   // public methods
-  login(email: string, password: string): Observable<any> {
-    return this.http.post<AuthModel>(`${API_USERS_URL}/login`, {
-      email,
-      password,
-    });
+  login(email: string, password: string): Observable<HttpResponse<UserModel>> {
+    return this.http.post<UserModel>(`${API_USERS_URL}/login`, {email, password,}, {observe : 'response'});
   }
 
   // CREATE =>  POST: add a new user to the server
@@ -40,5 +40,43 @@ export class AuthHTTPService {
     return this.http.get<UserModel>(`${API_USERS_URL}/me`, {
       headers: httpHeaders,
     });
+  }
+
+  addUserToCache(user: UserModel): void {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  getUserFromCache(): UserModel {
+    return JSON.parse(localStorage.getItem('user') || '');
+  }
+
+  addTokenToCache(token: string): void {
+    localStorage.setItem('token', token);
+  }
+
+  getTokenFromCache(): string {
+    return localStorage.getItem('token') || '';
+  }
+
+  logOut(): void {
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+  }
+
+  getTokenExpirationDate(): Date | null {
+    return this.jwtHelper.getTokenExpirationDate(this.getTokenFromCache());
+  }
+
+ 
+
+  createUserFormData(currentUsername: string, user: UserModel): FormData {
+    const formData = new FormData();
+    formData.append('currentUsername', currentUsername);
+    formData.append('fullName', user.fullname);
+    formData.append('email', user.email);
+    formData.append('role', user.role);
+    formData.append('isActive', JSON.stringify(user.active));
+    formData.append('isNonLocked', JSON.stringify(user.notLocked));
+    return formData;
   }
 }

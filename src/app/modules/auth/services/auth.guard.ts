@@ -11,8 +11,8 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const currentUser = this.authService.currentUserValue;
-    if (currentUser) {
+    const isConnected = this.authService.isConnected;
+    if (isConnected) {
       // logged in so return true
       return true;
     }
