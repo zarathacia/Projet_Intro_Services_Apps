@@ -8,9 +8,8 @@ import { ChartsComponent } from './charts/charts.component';
 import { MixedComponent } from './mixed/mixed.component';
 import { TablesComponent } from './tables/tables.component';
 import { FeedsComponent } from './feeds/feeds.component';
-import { WidgetsModule } from '../../_metronic/partials';
-import { ItemComponent } from './item/item.component';
-import { ProductComponent } from './product/product.component';
+import { CardsModule, WidgetsModule } from '../../_metronic/partials';
+
 
 @NgModule({
   declarations: [
@@ -21,9 +20,8 @@ import { ProductComponent } from './product/product.component';
     MixedComponent,
     TablesComponent,
     FeedsComponent,
-    ItemComponent,
-    ProductComponent,
+
   ],
-  imports: [CommonModule, WidgetsExamplesRoutingModule, WidgetsModule],
+  imports: [CommonModule, WidgetsExamplesRoutingModule, WidgetsModule,CardsModule,],
 })
 export class WidgetsExamplesModule {}
