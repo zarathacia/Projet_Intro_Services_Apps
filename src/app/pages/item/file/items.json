@@ -82,7 +82,7 @@
       "Type2":"Pièces semoir"
      } , {
       "ItemId":8 ,
-      "ItemName": "POMPE PRISE DE FORCE MALE ET RACCORDS POMPIERS",
+      "ItemName": "POMPE PRISE DE FORCE MALE",
       "ImageUrl" :"assets/media/items/kit-electrique-dispositif-d-attelage.jpg",
       "Price":1805.9,
       "Description":"POMPE PRISE DE FORCE MALE ET RACCORDS POMPIERS - PU55PFM",
@@ -93,7 +93,7 @@
       "Type2":"Pompe et motopompe de pulvérisation"
      } , {
       "ItemId":9 ,
-      "ItemName": "POMPE PRISE DE FORCE MALE ET RACCORDS POMPIERS",
+      "ItemName": "POMPE PRISE DE FORCE MALE",
       "ImageUrl":"assets/media/items/fermeture-reglable-oeillet-plat-pour-remorque-agricole.jpg",
       "Price":1805.9,
       "Description":"POMPE PRISE DE FORCE MALE ET RACCORDS POMPIERS - PU55PFM",
