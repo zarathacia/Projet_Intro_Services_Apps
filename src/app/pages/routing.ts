@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { ItemService } from '../Services/ItemService';
 import { ProductComponent } from './product/product.component';
 
 const Routing: Routes = [
@@ -55,11 +54,11 @@ const Routing: Routes = [
     component:ProductComponent
 
   },
-  {
+ /* {
     path:'Services/ItemService',
     component:ItemService
 
-  },
+  },*/
   {
     path: '',
     redirectTo: '/dashboard',

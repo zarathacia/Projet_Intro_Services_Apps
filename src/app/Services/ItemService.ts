@@ -114,6 +114,7 @@ export class ItemService {
 
   constructor(private _hhtp: HttpClient) { }
   getItemById(ItemId: any) {
-    return this._hhtp.get("http://localhost:4200/product?ItemId" + ItemId);
+    console.log("I am here at item service"+ItemId)
+    return this.items[ItemId];
   }
 }
