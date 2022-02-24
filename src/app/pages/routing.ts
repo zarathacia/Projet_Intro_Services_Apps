@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { ProductComponent } from './product/product.component';
 
 const Routing: Routes = [
   {
@@ -58,6 +59,16 @@ const Routing: Routes = [
     loadChildren: () =>
       import('../modules/apps/chat/chat.module').then((m) => m.ChatModule),
   },
+  {
+    path:'product/:id',
+    component:ProductComponent
+
+  },
+ /* {
+    path:'Services/ItemService',
+    component:ItemService
+
+  },*/
   {
     path: '',
     redirectTo: '/dashboard',

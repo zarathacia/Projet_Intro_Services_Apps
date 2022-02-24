@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
 import { WidgetsModule } from '../../_metronic/partials';
 import { ProductComponent } from './product.component';
+
 
 
 @NgModule({
@@ -12,11 +12,12 @@ import { ProductComponent } from './product.component';
     CommonModule,
     RouterModule.forChild([
       {
-        path: '',
+        path: 'product/:ItemId',
         component:ProductComponent,
       },
     ]),
     WidgetsModule,
   ],
+
 })
 export class ProductModule {}
