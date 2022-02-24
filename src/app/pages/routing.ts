@@ -17,6 +17,16 @@ const Routing: Routes = [
       import('./product/product.module').then((m) => m.ProductModule),
   },
   {
+    path: 'providerlist',
+    loadChildren: () =>
+      import('./provider-list/provider-list.module').then((m) => m.ProviderListModule),
+  },
+  {
+    path: 'providerdetails',
+    loadChildren: () =>
+      import('./provider-details/provider-details.module').then((m) => m.ProviderDetailsModule),
+  },
+  {
     path: 'builder',
     loadChildren: () =>
       import('./builder/builder.module').then((m) => m.BuilderModule),
