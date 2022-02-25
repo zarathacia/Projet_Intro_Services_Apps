@@ -1,11 +1,12 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { Observable, BehaviorSubject, of, Subscription } from 'rxjs';
+import { Observable, BehaviorSubject, of, throwError } from 'rxjs';
 import { map, catchError, switchMap, finalize } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { Router } from '@angular/router';
-import { HttpErrorResponse } from '@angular/common/http';
 import { AnalyticsHTTPService } from './analytics-http/analytics-http-service';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+
 
 
 @Injectable({
