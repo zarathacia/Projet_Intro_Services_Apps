@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LayoutService } from '../../_metronic/layout';
 
-type Tabs = 'Header' | 'News' | 'Dams' | 'Aside' | 'Content' | 'Footer';
+type Tabs = 'Header' | 'News' | 'Dams' | 'Pluvio' | 'Content' | 'Footer';
 
 @Component({
   selector: 'app-dashboard',

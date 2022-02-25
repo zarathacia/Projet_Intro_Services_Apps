@@ -7,11 +7,12 @@ import { DamsComponent } from './dams/dams.component';
 import { DashboardComponent } from './dashboard.component';
 import { DashComponent } from './dash/dash.component';
 import { FormsModule } from '@angular/forms';
+import { PluvioComponent } from './pluvio/pluvio.component';
 
 
 
 @NgModule({
-  declarations: [DashboardComponent, NewsComponent, DamsComponent, DashComponent, ],
+  declarations: [DashboardComponent, NewsComponent, DamsComponent, DashComponent, PluvioComponent, ],
   imports: [
     CommonModule,
     RouterModule.forChild([
@@ -30,6 +31,10 @@ import { FormsModule } from '@angular/forms';
       {
         path: 'dams',
         component: DamsComponent,
+      },
+      {
+        path: 'pluvio',
+        component: PluvioComponent,
       },
 
     ]),
