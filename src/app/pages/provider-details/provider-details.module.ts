@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProviderDetailsComponent } from './provider-details.component';
 import { RouterModule } from '@angular/router';
+import { InlineSVGModule } from 'ng-inline-svg';
 import {
   CardsModule,
   DropdownMenusModule,
@@ -23,6 +24,7 @@ import {
       },
     ]),
     DropdownMenusModule,
+    InlineSVGModule,
     WidgetsModule,
     CardsModule,
   ]
