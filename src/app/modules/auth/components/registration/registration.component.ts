@@ -16,6 +16,9 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   registrationForm: FormGroup;
   hasError: boolean;
   isLoading$: Observable<boolean>;
+  isSuccessful = true;
+  isSignUpFailed = false;
+  errorMessage = '';
 
   // private fields
   private unsubscribe: Subscription[] = []; // Read more: => https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
@@ -45,7 +48,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     this.registrationForm = this.fb.group(
       {
         fullname: [
-          '',
+          null,
           Validators.compose([
             Validators.required,
             Validators.minLength(3),
@@ -53,7 +56,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           ]),
         ],
         email: [
-          'qwe@qwe.qwe',
+          null,
           Validators.compose([
             Validators.required,
             Validators.email,
@@ -62,7 +65,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           ]),
         ],
         password: [
-          '',
+          null,
           Validators.compose([
             Validators.required,
             Validators.minLength(3),
@@ -70,7 +73,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           ]),
         ],
         cPassword: [
-          '',
+          null,
           Validators.compose([
             Validators.required,
             Validators.minLength(3),
@@ -86,7 +89,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   }
 
   submit() {
-    /*this.hasError = false;
+    this.hasError = false;
     const result: {
       [key: string]: string;
     } = {};
@@ -95,17 +98,25 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     });
     const newUser = new UserModel();
     newUser.setUser(result);
+    console.log(newUser.fullname);
+    console.log(this.f.email.value)
+    console.log(this.f.password.value)
+    console.log(this.f.cPassword.value)
+
     const registrationSubscr = this.authService
-      .registration(newUser)
-      .pipe(first())
-      .subscribe((user: UserModel) => {
-        if (user) {
-          this.router.navigate(['/']);
-        } else {
-          this.hasError = true;
-        }
+      .registration(newUser.fullname, newUser.email,newUser.password, newUser.password)
+      .subscribe(data => {
+        console.log(data)
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+        this.router.navigate(['/auth/login']);
+      },
+      err => {
+        this.errorMessage = err.error.message;  
+        console.log(this.errorMessage);
+        this.isSignUpFailed = true;
       });
-    this.unsubscribe.push(registrationSubscr);*/
+    this.unsubscribe.push(registrationSubscr);
   }
 
   ngOnDestroy() {
