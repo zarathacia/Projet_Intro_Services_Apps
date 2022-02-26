@@ -1,1 +1,7 @@
 <p>news works!</p>
+{{this.engrais[0]}}
+
+<div *ngFor=" let p of this.engrais; let i=index;" >
+    {{this.engrais[i]["_full_text"]}}
+    
+  </div>
