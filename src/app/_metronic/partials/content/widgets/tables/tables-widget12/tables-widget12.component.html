@@ -19,7 +19,7 @@
       <!-- end::Table head -->
       <!-- begin::Table body -->
       <tbody>
-        <tr>
+        <tr *ngFor=" let provider of providers">
           <td>
             <div class="d-flex align-items-center">
               <div class="symbol symbol-50px me-5">
@@ -36,10 +36,10 @@
                   href="providerdetails"
                   class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
                 >
-                EL KHADRA
+                {{provider.name}}
                 </a>
                 <span class="text-muted fw-bold text-muted d-block fs-7">
-                  Distribution des Produits Agricoles
+                  {{provider.descrip}}
                 </span>
               </div>
             </div>
@@ -66,7 +66,7 @@
               href="#"
               class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
             >
-            Monastir, Tunisie
+            {{provider.adresse}}
             </a>
           </td>
           <td>
