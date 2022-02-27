@@ -1,30 +1,4 @@
-<!-- begin::Header -->
-<div class="card-header border-0 pt-5">
-  <h3 class="card-title align-items-start flex-column">
-    <span class="card-label fw-bolder fs-3 mb-1">Member Statistics</span>
-    <span class="text-muted mt-1 fw-bold fs-7">Over 500 new members</span>
-  </h3>
-  <div class="card-toolbar">
-    <!-- begin::Menu -->
-    <button
-      type="button"
-      class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-      data-kt-menu-trigger="click"
-      data-kt-menu-placement="bottom-end"
-      data-kt-menu-flip="top-end"
-    >
-      <span
-        [inlineSVG]="'./assets/media/icons/duotune/general/gen024.svg'"
-        class="svg-icon svg-icon-2"
-      ></span>
-    </button>
-    <!-- begin::Menu 2 -->
-    <app-dropdown-menu2></app-dropdown-menu2>
-    <!-- end::Menu 2 -->
-    <!-- end::Menu -->
-  </div>
-</div>
-<!-- end::Header -->
+
 <!-- begin::Body -->
 <div class="card-body py-3">
   <!-- begin::Table container -->
@@ -34,10 +8,10 @@
       <!-- begin::Table head -->
       <thead>
         <tr class="fw-bolder text-muted bg-light">
-          <th class="ps-4 min-w-300px rounded-start">Agent</th>
-          <th class="min-w-125px">Earnings</th>
-          <th class="min-w-125px">Comission</th>
-          <th class="min-w-200px">Company</th>
+          <th class="ps-4 min-w-300px rounded-start">Supplier</th>
+          <th class="min-w-125px">Products</th>
+          <th class="min-w-125px">Delivery</th>
+          <th class="min-w-200px">Location</th>
           <th class="min-w-150px">Rating</th>
           <th class="min-w-200px text-end rounded-end"></th>
         </tr>
@@ -45,13 +19,13 @@
       <!-- end::Table head -->
       <!-- begin::Table body -->
       <tbody>
-        <tr>
+        <tr *ngFor=" let provider of providers">
           <td>
             <div class="d-flex align-items-center">
               <div class="symbol symbol-50px me-5">
                 <span class="symbol-label bg-light">
                   <img
-                    src="./assets/media/svg/avatars/001-boy.svg"
+                    src="./assets/media/logos/elkhadhralogo.png"
                     class="h-75 align-self-end"
                     alt=""
                   />
@@ -59,13 +33,13 @@
               </div>
               <div class="d-flex justify-content-start flex-column">
                 <a
-                  href="#"
+                  href="providerdetails"
                   class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
                 >
-                  Brad Simmons
+                {{provider.name}}
                 </a>
                 <span class="text-muted fw-bold text-muted d-block fs-7">
-                  HTML, JS, ReactJS
+                  {{provider.descrip}}
                 </span>
               </div>
             </div>
@@ -75,31 +49,113 @@
               href="#"
               class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
             >
-              $8,000,000
+            PESTICIDES
             </a>
-            <span class="text-muted fw-bold text-muted d-block fs-7"
-              >Pending</span
-            >
+            
           </td>
           <td>
             <a
               href="#"
               class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
             >
-              $5,400
+            Yes
             </a>
-            <span class="text-muted fw-bold text-muted d-block fs-7">Paid</span>
           </td>
           <td>
             <a
               href="#"
               class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
             >
-              Intertico
+            {{provider.adresse}}
             </a>
-            <span class="text-muted fw-bold text-muted d-block fs-7">
-              Web, UI/UX Design
+          </td>
+          <td>
+            <div class="rating">
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+            </div>
+            <span class="text-muted fw-bold text-muted d-block fs-7 mt-1">
+              Best Rated
             </span>
+          </td>
+          <td class="text-end">
+            <a
+              href="providerdetails"
+              class="
+                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
+                px-4
+                me-2
+              "
+            >
+              View
+            </a>
+          
+          </td>
+        
+        
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <div class="symbol symbol-50px me-5">
+                <span class="symbol-label bg-light">
+                  <img
+                    src="./assets/media/logos/elkhadhralogo.png"
+                    class="h-75 align-self-end"
+                    alt=""
+                  />
+                </span>
+              </div>
+              <div class="d-flex justify-content-start flex-column">
+                <a
+                  href="providerdetails"
+                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                >
+                EL KHADRA
+                </a>
+                <span class="text-muted fw-bold text-muted d-block fs-7">
+                  Distribution des Produits Agricoles
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <a
+              href="#"
+              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+            >
+            PESTICIDES
+            </a>
+            
+          </td>
+          <td>
+            <a
+              href="#"
+              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+            >
+            Yes
+            </a>
+          </td>
+          <td>
+            <a
+              href="#"
+              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+            >
+            Monastir, Tunisie
+            </a>
           </td>
           <td>
             <div class="rating">
@@ -134,16 +190,186 @@
             >
               View
             </a>
+          
+          </td>
+        
+        
+        </tr> 
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <div class="symbol symbol-50px me-5">
+                <span class="symbol-label bg-light">
+                  <img
+                    src="./assets/media/logos/elkhadhralogo.png"
+                    class="h-75 align-self-end"
+                    alt=""
+                  />
+                </span>
+              </div>
+              <div class="d-flex justify-content-start flex-column">
+                <a
+                  href="providerdetails"
+                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                >
+                EL KHADRA
+                </a>
+                <span class="text-muted fw-bold text-muted d-block fs-7">
+                  Distribution des Produits Agricoles
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <a
+              href="#"
+              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+            >
+            PESTICIDES
+            </a>
+            
+          </td>
+          <td>
+            <a
+              href="#"
+              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+            >
+            Yes
+            </a>
+          </td>
+          <td>
+            <a
+              href="#"
+              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+            >
+            Monastir, Tunisie
+            </a>
+          </td>
+          <td>
+            <div class="rating">
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+            </div>
+            <span class="text-muted fw-bold text-muted d-block fs-7 mt-1">
+              Best Rated
+            </span>
+          </td>
+          <td class="text-end">
             <a
               href="#"
               class="
                 btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
                 px-4
+                me-2
               "
             >
-              Edit
+              View
+            </a>
+          
+          </td>
+        
+        
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <div class="symbol symbol-50px me-5">
+                <span class="symbol-label bg-light">
+                  <img
+                    src="./assets/media/logos/elkhadhralogo.png"
+                    class="h-75 align-self-end"
+                    alt=""
+                  />
+                </span>
+              </div>
+              <div class="d-flex justify-content-start flex-column">
+                <a
+                  href="providerdetails"
+                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                >
+                EL KHADRA
+                </a>
+                <span class="text-muted fw-bold text-muted d-block fs-7">
+                  Distribution des Produits Agricoles
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <a
+              href="#"
+              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+            >
+            PESTICIDES
+            </a>
+            
+          </td>
+          <td>
+            <a
+              href="item"
+              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+            >
+            Yes
             </a>
           </td>
+          <td>
+            <a
+              href="#"
+              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+            >
+            Monastir, Tunisie
+            </a>
+          </td>
+          <td>
+            <div class="rating">
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+              <div class="rating-label me-2 checked">
+                <i class="bi bi-star-fill fs-5"></i>
+              </div>
+            </div>
+            <span class="text-muted fw-bold text-muted d-block fs-7 mt-1">
+              Best Rated
+            </span>
+          </td>
+          <td class="text-end">
+            <a
+              href="#"
+              class="
+                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
+                px-4
+                me-2
+              "
+            >
+              View
+            </a>
+          
+          </td>
+        
+        
         </tr>
         <tr>
           <td>
@@ -159,7 +385,7 @@
               </div>
               <div class="d-flex justify-content-start flex-column">
                 <a
-                  href="#"
+                  href="providerdetails"
                   class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
                 >
                   Lebron Wayde
@@ -232,15 +458,7 @@
             >
               View
             </a>
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-              "
-            >
-              Edit
-            </a>
+            
           </td>
         </tr>
         <tr>
@@ -331,15 +549,6 @@
               "
             >
               View
-            </a>
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-              "
-            >
-              Edit
             </a>
           </td>
         </tr>
@@ -432,15 +641,6 @@
             >
               View
             </a>
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-              "
-            >
-              Edit
-            </a>
           </td>
         </tr>
         <tr>
@@ -531,15 +731,6 @@
               "
             >
               View
-            </a>
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-              "
-            >
-              Edit
             </a>
           </td>
         </tr>

@@ -1,0 +1,158 @@
+<div class="d-flex flex-wrap flex-stack mb-6">
+    <h3 class="fw-bolder my-2">
+      Provider's list
+      <span class="fs-6 text-gray-400 fw-bold ms-1">({{providers.length}})</span>
+    </h3>
+   
+  </div>
+  <!-- <app-tables-widget12 class="card mb-5 mb-xl-8"></app-tables-widget12>-->
+  
+<!-- begin::Body -->
+<div class="card-body py-3">
+  <!-- begin::Table container -->
+  <div class="table-responsive">
+    <!-- begin::Table -->
+    <table class="table align-middle gs-0 gy-4">
+      <!-- begin::Table head -->
+      <thead>
+        <tr class="fw-bolder text-muted bg-light">
+          <th class="ps-4 min-w-300px rounded-start">Supplier</th>
+          <th class="min-w-125px">Products</th>
+          <th class="min-w-125px">Delivery</th>
+          <th class="min-w-200px">Location</th>
+          <th class="min-w-150px">Rating</th>
+          <th class="min-w-200px text-end rounded-end"></th>
+        </tr>
+      </thead>
+      <!-- end::Table head -->
+      <!-- begin::Table body -->
+      <tbody>
+        <tr *ngFor=" let provider of providers">
+          <td>
+            <div class="d-flex align-items-center">
+              <div class="symbol symbol-50px me-5">
+                <span class="symbol-label bg-light">
+                  <img
+                    src={{provider.imglink}}
+                    class="h-75 align-self-end"
+                    alt=""
+                  />
+                </span>
+              </div>
+              <div class="d-flex justify-content-start flex-column">
+                <a
+                  href="providerdetails"
+                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                >
+                {{provider.name}}
+                </a>
+                <span class="text-muted fw-bold text-muted d-block fs-7">
+                  {{provider.descrip}}
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <a
+              href="#"
+              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+            >
+            {{provider.type}}
+            </a>
+            
+          </td>
+          <td>
+            <a
+              href="#"
+              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+            >
+            Yes
+            </a>
+          </td>
+          <td>
+            <a
+              href="#"
+              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+            >
+            {{provider.adresse}}
+            </a>
+          </td>
+          <td>
+            <div  class="rating">
+              <div class="rating-label me-2 checked">
+                <i *ngFor='let in of counter(5)' class="bi bi-star-fill fs-5"></i>
+              </div>
+              
+            </div>
+            <span class="text-muted fw-bold text-muted d-block fs-7 mt-1">
+              Best Rated
+            </span>
+          </td>
+          <td class="text-end">
+            <a
+              href="providerdetails"
+              class="
+                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
+                px-4
+                me-2
+              "
+            >
+              View
+            </a>
+          
+          </td>
+        
+        
+        </tr>
+      
+      </tbody>
+      <!-- end::Table body -->
+    </table>
+    <!-- end::Table -->
+  </div>
+  <!-- end::Table container -->
+</div>
+<!-- begin::Body -->
+
+  <div class="d-flex flex-stack flex-wrap pt-10">
+    <div class="fs-6 fw-bold text-gray-700">Showing 1 to 10 of 50 entries</div>
+  
+    <ul class="pagination">
+      <li class="page-item previous">
+        <a class="page-link cursor-pointer">
+          <i class="previous"></i>
+        </a>
+      </li>
+  
+      <li class="page-item active">
+        <a class="page-link cursor-pointer"> 1 </a>
+      </li>
+  
+      <li class="page-item">
+        <a class="page-link cursor-pointer"> 2 </a>
+      </li>
+  
+      <li class="page-item">
+        <a class="page-link cursor-pointer"> 3 </a>
+      </li>
+  
+      <li class="page-item">
+        <a class="page-link cursor-pointer"> 4 </a>
+      </li>
+  
+      <li class="page-item">
+        <a class="page-link cursor-pointer"> 5 </a>
+      </li>
+  
+      <li class="page-item">
+        <a class="page-link cursor-pointer"> 6 </a>
+      </li>
+  
+      <li class="page-item next">
+        <a class="page-link cursor-pointer">
+          <i class="next"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  

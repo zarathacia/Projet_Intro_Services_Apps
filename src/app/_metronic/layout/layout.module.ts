@@ -25,6 +25,7 @@ import { HeaderMenuComponent } from './components/header/header-menu/header-menu
 import { DrawersModule, DropdownMenusModule, ModalsModule, EngagesModule} from '../partials';
 import {EngagesComponent} from "../partials/layout/engages/engages.component";
 
+
 const routes: Routes = [
   {
     path: '',
@@ -47,6 +48,7 @@ const routes: Routes = [
     PageTitleComponent,
     HeaderMenuComponent,
     EngagesComponent,
+    
   ],
   imports: [
     CommonModule,

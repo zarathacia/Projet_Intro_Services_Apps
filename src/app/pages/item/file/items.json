@@ -1,0 +1,107 @@
+  [
+    { "ItemId": 1,
+      "ItemName": "Soc de rasette",
+      "ImageUrl":"assets/media/items/aileron-pour-bonnel-polibar.jpg",
+      "Price":30.5,
+      "Description":"SOC DE RASETTE DROIT ADAPTABLE HUARD 631016",
+      "Provider":"",
+      "Reference ": "Référence : FM26426",
+      "Disponibilité" :"Produit indisponible",
+      "Type1":"Pièces agricoles",
+      "Type2":"piéce outils du sol non animé",
+      "Type3":"Pièces de charrue"
+     },{
+      "ItemId": 2,
+      "ItemName": "SOC BUTTEUR",
+      "ImageUrl":"assets/media/items/charniere-plate.jpg",
+      "Price":120.5,
+      "Description":"SOC BUTTEUR 350 MM",
+      "Provider":"",
+      "Reference" : "Référence : 012.2003",
+      "Disponibilité" :"Produit disponible",
+      "Type1":"Pièces agricoles",
+      "Type2":"piéce outils du sol non animé",
+      "Type3":"Pièces pour désherbage mécanique"
+     },{
+      "ItemId": 3,
+      "ItemName": "Crochet herse de prairie",
+      "ImageUrl":"assets/media/items/coutre-pour-strip-till-duro.jpg",
+      "Price":5.5,
+      "Description":"Crochet SAPHIR",
+      "Provider":"SAPHIR",
+      "Reference" : "Référence : 69500159",
+      "Disponibilité" :"Produit disponible",
+      "Type1":"Pièces agricoles",
+      "Type2":"piéce outils du sol non animé",
+      "Type3":"Pièces pour herse de prairie"
+     },{
+      "ItemId": 4,
+      "ItemName": "Roue de terrage",
+      "ImageUrl":"assets/media/items/disque-obturateur-grimme-pour-galet.jpg",
+      "Price":125.5,
+      "Description":"ROUE TOLE 280/330X80X2.5 A FLASQUE",
+      "Provider":"",
+      "Reference" : "Référence : RM28080CRSP25F",
+      "Disponibilité" :"Produit disponible",
+      "Type1":"Pièces agricoles",
+      "Type2":"piéce outils du sol non animé",
+      "Type3":"Roue de terrage & axe"
+     } , {
+      "ItemId": 5,
+      "ItemName": "Soc coeur",
+      "ImageUrl":"assets/media/items/kit-de-reparation-epandeur-pendulaire-standard-pieces-essentielles-K440-K440.jpg",
+      "Price":25.5,
+      "Description":"Soc coeur 125X105X4 mm",
+      "Provider":"AMA",
+      "Reference" : "Référence : AMCP1362",
+      "Disponibilité" :"Produit disponible",
+      "Type1":"Pièces agricoles",
+      "Type2":"piéce outils du sol non animé",
+      "Type3":"Pièces pour cultivateur et déchaumeur"
+     } , {
+      "ItemId": 6,
+      "ItemName": "Grattoir de packer",
+      "ImageUrl":"assets/media/items/marteau-herminette-220-FG000220-FG000220.jpg",
+      "Price":85.5,
+      "Description":"Grattoir de packer type Otico 125x50x79",
+      "Provider":"JPF CARBURE",
+      "Reference ": "Référence : GROT184",
+      "Disponibilité" :"Produit disponible",
+      "Type1":"Pièces agricoles",
+      "Type2":"piéce outils du sol animé"
+     } , {
+      "ItemId":7 ,
+      "ItemName": "RONDELLE CRENELE",
+      "ImageUrl":"assets/media/items/pompe-sur-prise-de-force-male-type-pu-55-103617.jpg",
+      "Price":8.9,
+      "Description":"RONDELLE CRENELE DE DISTRIBUTION NODET KUHN",
+      "Provider":"KUHN",
+      "Reference" : "Référence : K3105740",
+      "Disponibilité" :"Produit disponible",
+      "Type1": "Pièces agricoles",
+      "Type2":"Pièces semoir"
+     } , {
+      "ItemId":8 ,
+      "ItemName": "POMPE PRISE DE FORCE MALE",
+      "ImageUrl" :"assets/media/items/kit-electrique-dispositif-d-attelage.jpg",
+      "Price":1805.9,
+      "Description":"POMPE PRISE DE FORCE MALE ET RACCORDS POMPIERS - PU55PFM",
+      "Provider":"RENSON",
+      "Reference": "Référence : 103617",
+      "Disponibilité" :"Produit disponible",
+      "Type1":"Pièces agricoles",
+      "Type2":"Pompe et motopompe de pulvérisation"
+     } , {
+      "ItemId":9 ,
+      "ItemName": "POMPE PRISE DE FORCE MALE",
+      "ImageUrl":"assets/media/items/fermeture-reglable-oeillet-plat-pour-remorque-agricole.jpg",
+      "Price":1805.9,
+      "Description":"POMPE PRISE DE FORCE MALE ET RACCORDS POMPIERS - PU55PFM",
+      "Provider":"RENSON",
+      "Reference" : "Référence : 103617",
+      "Disponibilité" :"Produit disponible",
+      "Type1":"Pièces agricoles",
+      "Type2":"Pièces broyage et débroussaillage"
+     }
+      
+  ]
