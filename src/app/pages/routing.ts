@@ -43,11 +43,6 @@ const Routing: Routes = [
       import('../modules/account/account.module').then((m) => m.AccountModule),
   },
   {
-    path: 'crafted/pages/wizards',
-    loadChildren: () =>
-      import('../modules/wizards/wizards.module').then((m) => m.WizardsModule),
-  },
-  {
     path: 'crafted/widgets',
     loadChildren: () =>
       import('../modules/widgets-examples/widgets-examples.module').then(
