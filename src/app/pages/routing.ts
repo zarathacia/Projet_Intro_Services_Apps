@@ -54,11 +54,7 @@ const Routing: Routes = [
         (m) => m.WidgetsExamplesModule
       ),
   },
-  {
-    path: 'apps/chat',
-    loadChildren: () =>
-      import('../modules/apps/chat/chat.module').then((m) => m.ChatModule),
-  },
+
   {
     path:'product/:id',
     component:ProductComponent
