@@ -50,7 +50,7 @@ export class AuthService implements OnDestroy {
   }
 
   // public methods
-  login(email: string, password: string): void {
+  login(email: string, password: string) {
     this.isLoadingSubject.next(true);
      this.authHttpService.login(email, password).subscribe(
       (response) => {
@@ -112,19 +112,19 @@ export class AuthService implements OnDestroy {
   }
 
   // need create new user then login
-  registration(user: UserModel) {
-    /*this.isLoadingSubject.next(true);
-    return this.authHttpService.createUser(user).pipe(
+  registration(fullName: string, email: string, password: string, confirmedPassword: string) {
+    this.isLoadingSubject.next(true);
+    return this.authHttpService.createUser(fullName, email, password, confirmedPassword).pipe(
       map(() => {
         this.isLoadingSubject.next(false);
       }),
-      switchMap(() => this.login(user.email, user.password)),
+      //switchMap(async () => this.login(email, password)),
       catchError((err) => {
         console.error('err', err);
         return of(undefined);
       }),
       finalize(() => this.isLoadingSubject.next(false))
-    );*/
+    );
   }
 
   forgotPassword(email: string): Observable<boolean> {
