@@ -17,75 +17,57 @@
       <!-- begin::Table head -->
       <thead>
         <tr class="fw-bolder text-muted">
-          <th class="w-25px">
-            <div
-              class="
-                form-check form-check-sm form-check-custom form-check-solid
-              "
-            >
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value="1"
-                data-kt-check="true"
-                data-kt-check-target=".widget-13-check"
-              />
-            </div>
-          </th>
-          <th > _id</th>
-          <th >composante_ar:</th>
-          <th >frequence</th>
-          <th >source</th>
-          <th >unite</th>
+          <th class="min-w-25px" > _id</th>
+          <th class="min-w-150px">composante_ar:</th>
+          <th class="min-w-150px">frequence</th>
+          <th class="min-w-150px">source</th>
+          <th class="min-w-150px" >unite</th>
         </tr>
       </thead>
       <!-- end::Table head -->
       <!-- begin::Table body -->
-      <tbody>
-        <div *ngFor=" let p of this.engrais; let i=index;" >
+      <tbody *ngFor=" let p of this.engrais; let i=index;">
+        
         <tr>
-          <td>
-            <div class="form-check form-check-sm form-check-custom form-check-solid">
-              <input class="form-check-input widget-13-check" type="checkbox" value={{i}}/>
-            </div>
-          </td>
-          <td>
+          <td class="min-w-50px">
             <a class="text-dark fw-bolder text-hover-primary fs-6">
-              {{this.engrais[i]["_id"]}} 
+              {{this.engrais[i]["_id"]}} &nbsp;
             </a>
           </td>
-          <td>
+          <td class="min-w-150px">
             <a
               href="#"
               class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
             >
-            {{this.engrais[i]["composante_ar"]}} 
+            {{this.engrais[i]["composante_ar"]}} &nbsp;
             </a>
           </td>
-          <td>
+          <td class="min-w-150px">
             <a
               href="#"
               class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
             >
-            {{this.engrais[i]["frequence"]}} 
+            {{this.engrais[i]["frequence"]}} &nbsp;
             </a>
           </td>
-          <td>
+          <td class="min-w-150px">
             <a
               href="#"
               class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
             >
-            {{this.engrais[i]["source"]}}             
+            {{this.engrais[i]["source"]}}    &nbsp;         
           </a>
 
           </td>
 
-          <td>
-            <span class="badge badge-light-success">{{this.engrais[i]["unite"]}} </span>
+          <td class="min-w-150px">
+            <span class="badge badge-light-success">{{this.engrais[i]["unite"]}} 
+              &nbsp;
+            </span>
           </td>
 
         </tr>
-      </div>
+      
       </tbody>
       <!-- end::Table body -->
     </table>
@@ -93,4 +75,4 @@
   </div>
   <!-- end::Table container -->
 </div>
-<!-- begin::Body -->
+
