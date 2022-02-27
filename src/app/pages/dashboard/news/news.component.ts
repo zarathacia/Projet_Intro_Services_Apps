@@ -9,13 +9,15 @@ import { Engrais } from 'src/app/services/DataModels/engrais';
 })
 
 export class NewsComponent implements OnInit {
-  engrais: Engrais[] =[];    
+  engrais: Engrais[] =[]; 
+  count: any;   
   constructor(private analyticsService: AnalyticsService) { }
   
   ngOnInit(): void {
 
     this.analyticsService.getEngrais().subscribe((resp: Data) => {
       this.engrais = resp.result.records;
+      this.count=this.engrais.length;
       console.log( typeof(resp));
       console.log(this.engrais[0]);
     });
