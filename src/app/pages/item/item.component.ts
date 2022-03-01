@@ -33,4 +33,6 @@ export class ItemComponent implements OnInit {
   addtoCart(item:any){
     this.cartService.addtoCart(item);
   }
+  
+  
 } 
