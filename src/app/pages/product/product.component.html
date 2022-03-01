@@ -3,7 +3,7 @@ Product Name: {{Item.name}}
     <div class="cart">
         <div class="row row1" >
             <div class="col-md-4">
-                <img src="assets/media/items/fermeture-reglable-oeillet-plat-pour-remorque-agricole.jpg" width="100%" id="ProductImg">            
+                <img src="{{Item.imageUrl}}" width="100%" id="ProductImg">            
             </div>
             <div class="col-md-6">
                 <h1 class="product-title">Product Name: {{Item.name}}</h1>
@@ -18,8 +18,8 @@ Product Name: {{Item.name}}
                     <p>240 reviews</p>
                 </div>
                 <div class="price">
-                    <span> 1805.9  DT</span>
-                    <span>2000 DT</span>
+                    <span>{{Item.price}}</span>
+                  
                 </div>
                 <div class="row">
                     <div class="col-md-4 qty">
@@ -42,10 +42,10 @@ Product Name: {{Item.name}}
                         <h4>Description :</h4>
                         <br>
                         <div id="Description">
-                            <p>POMPE PRISE DE FORCE MALE ET RACCORDS POMPIERS - PU55PFM.</p>
+                            <p>{{Item.description}}</p>
                         </div>
                         <div id="Details" >
-                            <p>POMPE PRISE DE FORCE MALE ET RACCORDS POMPIERS - PU55PFM</p>
+                            <p>{{Item.description}}</p>
                         </div>
                     </div>
                 </div>
