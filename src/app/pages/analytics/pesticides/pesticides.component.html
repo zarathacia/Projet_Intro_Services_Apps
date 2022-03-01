@@ -1,0 +1,66 @@
+<p>pesticides works!</p>
+
+<div class="card card-custom">
+    <!-- begin::Header -->
+    <div class="card-header card-header-stretch overflow-auto">
+      <ul
+        class="
+          nav nav-stretch nav-line-tabs
+          fw-bold
+          border-transparent
+          flex-nowrap
+        "
+        role="tablist"
+      >
+        <li class="nav-item">
+          <a
+            class="nav-link cursor-pointer"
+            [ngClass]="{ active: activeTab === 'Herbicides' }"
+            (click)="setActiveTab('Herbicides')"
+            role="tab"
+          >
+            Herbicides
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link cursor-pointer"
+            [ngClass]="{ active: activeTab === 'Insecticides' }"
+            (click)="setActiveTab('Insecticides')"
+            role="tab"
+          >
+            Barrages
+          </a>
+        </li>
+
+  
+      </ul>
+    </div>
+    <!-- end::Header -->
+    <!-- begin::Form -->
+    <form class="form" novalidate #form="ngForm" (ngSubmit)="submitPreview()">
+      <!-- begin::Body -->
+      <div class="card-body">
+        <div class="tab-content pt-3">
+          <!-- begin::Header -->
+          <div class="tab-pane" [ngClass]="{ active: activeTab === 'Herbicides' }">
+            <div class="row mb-10">
+
+            </div>
+  
+          </div>
+          <div class="tab-pane" [ngClass]="{ active: activeTab === 'Insecticides' }">
+            <div class="row mb-10">
+
+            </div>
+  
+          </div>
+  
+
+        </div>
+      </div>
+      <!-- end::Body -->
+    </form>
+    <!-- end::Form -->
+  </div>
+  

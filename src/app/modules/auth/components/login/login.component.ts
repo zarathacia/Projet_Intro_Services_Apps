@@ -13,10 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit, OnDestroy {
   // KeenThemes mock, change it to:
-  defaultAuth: any = {
-    email: '',
-    password: '',
-  };
+
   loginForm: FormGroup;
   hasError: boolean;
   returnUrl: string;
@@ -56,7 +53,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   initForm() {
     this.loginForm = this.fb.group({
       email: [
-        this.defaultAuth.email,
+        null,
         Validators.compose([
           Validators.required,
           Validators.email,
@@ -65,7 +62,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         ]),
       ],
       password: [
-        this.defaultAuth.password,
+        null,
         Validators.compose([
           Validators.required,
           Validators.minLength(3),
@@ -78,7 +75,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   submit() {
     this.hasError = false;
    //this.authService.login(this.f.email.value, this.f.password.value)
-   this.router.navigateByUrl('/dashboard')
+   //this.router.navigateByUrl('/dashboard')
   }
 
   ngOnDestroy() {

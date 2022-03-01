@@ -23,7 +23,7 @@
               mb-2
             "
           >
-            <div class="d-flex flex-column">
+            <div *ngFor=" let detail of details" class="d-flex flex-column">
               <div class="d-flex align-items-center mb-2">
                 <a
                   class="
@@ -34,7 +34,8 @@
                     cursor-pointer
                   "
                 >
-                  EL KHADHRA
+                  {{detail.name}}
+                
                 </a>
                 <a class="cursor-pointer">
                  
@@ -56,7 +57,7 @@
                   "
                 >
                   
-                Distribution des Produits Agricoles 
+                {{detail.descrip}}
                 </a>
                 
               </div>

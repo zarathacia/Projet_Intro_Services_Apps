@@ -13,6 +13,11 @@ const Routing: Routes = [
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
+    path: 'analytics',
+    loadChildren: () =>
+      import('./analytics/analytics.module').then((m) => m.AnalyticsModule),
+  },
+  {
     path: 'item',
     loadChildren: () =>
       import('./item/item.module').then((m) => m.ItemModule),
@@ -48,22 +53,13 @@ const Routing: Routes = [
       import('../modules/account/account.module').then((m) => m.AccountModule),
   },
   {
-    path: 'crafted/pages/wizards',
-    loadChildren: () =>
-      import('../modules/wizards/wizards.module').then((m) => m.WizardsModule),
-  },
-  {
     path: 'crafted/widgets',
     loadChildren: () =>
       import('../modules/widgets-examples/widgets-examples.module').then(
         (m) => m.WidgetsExamplesModule
       ),
   },
-  {
-    path: 'apps/chat',
-    loadChildren: () =>
-      import('../modules/apps/chat/chat.module').then((m) => m.ChatModule),
-  },
+
   {
     path:'product/:id',
     component:ProductComponent

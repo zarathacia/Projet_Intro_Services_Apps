@@ -14,6 +14,9 @@ const API_USERS_URL = `${environment.apiUrl}/user`;
 })
 export class AuthHTTPService {
   private jwtHelper = new JwtHelperService();
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
   constructor(private http: HttpClient) {}
 
   // public methods
@@ -22,8 +25,12 @@ export class AuthHTTPService {
   }
 
   // CREATE =>  POST: add a new user to the server
-  createUser(user: UserModel): Observable<UserModel> {
-    return this.http.post<UserModel>(API_USERS_URL, user);
+  createUser(fullName: string, email: string, password: string, confirmedPassword: string): Observable<object> {
+    return this.http.post(`${API_USERS_URL}/register`, {fullName, email, password, confirmedPassword});
+  }
+
+  createUserTry(): Observable<object> {
+    return this.http.post(`${API_USERS_URL}/register`, {fullName:"Yessine Bouziz", email:"yessine.bouaziz@supcom.tn", password:'123456789', confirmedPassword:'123456789'});
   }
 
   // Your server should check email => If email exists send link to the user and return true | If email doesn't exist return false

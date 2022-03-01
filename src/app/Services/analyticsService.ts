@@ -3,12 +3,14 @@ import { catchError } from 'rxjs/internal/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Data } from './DataModels/data';
 
 const endpoint = 'http://localhost:3000/api/v1/';
 
 const agridataEndpoint="http://agridata.tn/fr/api/3/action/datastore_search_sql?sql="
-const engraisDataset="9d1d4c92-9a64-44f0-bb4c-18bf581e3aa5/resource/7ea488c6-ed1d-4005-8239-b40125897d7a"
-const sql="SELECT * from "+ engraisDataset
+const engraisDataset="%227ea488c6-ed1d-4005-8239-b40125897d7a%22"
+const sql="SELECT%20*%20from%20"+ engraisDataset
+//"http://agridata.tn/fr/api/3/action/datastore_search_sql?sql=SELECT%20*%20from%20%227ea488c6-ed1d-4005-8239-b40125897d7a%22"
 //Nasa
 const nasaEndpoint=' https://power.larc.nasa.gov/cgi-bin/v1';
 const format='json'
@@ -40,37 +42,38 @@ const parameters=[
 })
 export class AnalyticsService {
   constructor(private http: HttpClient) {}
+  
+  public getEngrais(){ 
 
-  public sendGetRequest(){
-    return this.http.get(agridataEndpoint + sql);
-    
-  }
-
-  /*getEngraisList(): Observable<any>
-  {
-    //http://agridata.tn/dataset//download/metaengrais.xlsx
-    var sql="SELECT * from "+ engraisDataset
-    console.log(agridataEndpoint + sql)
-    return this.http.get(agridataEndpoint + sql).pipe(
-      map(this.extractData),
+  return this.http.get<Data>(agridataEndpoint + sql).pipe(
       catchError(this.handleError)
     );
-  }*/
-  private extractData(res: Response): any {
-    const body = res;
-    return body || { };
   }
-  
-  private handleError(error: HttpErrorResponse): any {
-    if (error.error instanceof ErrorEvent) {
-      console.error('An error occurred:', error.error.message);
-    } else {
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
-    }
-    return throwError(
-      'Something bad happened; please try again later.');
-  }
+  headers: HttpHeaders | { [header: string]: string | string[]; };
+  //to use
 
+  // Error 
+  handleError(error: HttpErrorResponse) {
+    let msg = '';
+    if (error.error instanceof ErrorEvent) {
+      // client-side error
+      msg = error.error.message;
+    } else {
+      // server-side error
+      msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    return throwError(msg);
+  }
 }
+
+
+/*fetch(agridataEndpoint + sql)
+.then(res => res.json())
+.then((out) => {
+  console.log('Checkout this JSON! ', engrais=JSON.parse(out['result']['records']));
+})
+.catch(err => { throw err });
+console.log(engrais)
+return engrais
+//console.log(agridataEndpoint + sql)
+*/
