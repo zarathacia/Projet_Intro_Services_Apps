@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ItemService } from 'src/app/services/ItemService';
+//import { ItemService } from 'src/app/services/ItemService';
 
 
 @Component({
@@ -11,16 +11,17 @@ import { ItemService } from 'src/app/services/ItemService';
 export class ProductComponent {
   itemId:any;
   Item:any;
-  constructor(private route: ActivatedRoute,private itemService:ItemService ){}
+  constructor(){}
+  //private route: ActivatedRoute,private itemService:ItemService 
   ngOnInit() {
-    this.route.paramMap.subscribe(params =>{
-      this.itemId = params.get('id');
-      console.log(this.itemId)
-    });
-    this.getproductById(this.itemId);
+    //this.route.paramMap.subscribe(params =>{
+      //this.itemId = params.get('id');
+      //console.log(this.itemId)
+    //});
+    //this.getproductById(this.itemId);
   }
-  getproductById(ItemId:any){
-    this.Item=this.itemService.getItemById(ItemId)
-    console.log(this.Item);
-  }
+ // getproductById(ItemId:any){
+   // this.Item=this.itemService.getItemById(ItemId)
+    //console.log(this.Item);
+  //}
 }

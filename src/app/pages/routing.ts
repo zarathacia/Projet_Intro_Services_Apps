@@ -3,6 +3,11 @@ import { ProductComponent } from './product/product.component';
 
 const Routing: Routes = [
   {
+    path: 'cart',
+    loadChildren: () =>
+      import('./cart/cart.modules').then((m) => m.CartModule),
+  },
+  {
     path: 'dashboard',
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),

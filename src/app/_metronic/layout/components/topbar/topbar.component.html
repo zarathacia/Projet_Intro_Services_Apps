@@ -102,6 +102,34 @@
   <app-quick-links-inner></app-quick-links-inner>
 </div>
 
+
+<!-- Shopping Cart -->
+<div 
+  class="d-flex align-items-center" [ngClass]="toolbarButtonMarginClass"
+>
+<!--begin::toggle-->
+  <div
+    class="btn btn-icon btn-active-light-primary position-relative"
+    [ngClass]="toolbarButtonMarginClass"
+    id="kt_shopping_cart_toogle"
+    
+  >
+  
+  <a class="nav-link"><span
+    routerLink="/cart"
+    [inlineSVG]="'./assets/media/icons/duotune/ecommerce/ecm001.svg'"
+    class="svg-icon"
+    [ngClass]="toolbarButtonIconSizeClass"
+  
+    
+></span>
+</a>
+<div style="font-size:7px" class="badge bg-success">{{totalItem}}</div>
+  </div>
+  
+</div>
+
+
 <!-- begin::User -->
 <div
   class="d-flex align-items-center"

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/Services/cart.service';
 import { LayoutService } from '../../core/layout.service';
 
 @Component({
@@ -13,9 +14,15 @@ export class TopbarComponent implements OnInit {
   toolbarButtonIconSizeClass = 'svg-icon-1';
   headerLeft: string = 'menu';
 
-  constructor(private layout: LayoutService) {}
+  public totalItem :number =0 ;
+  constructor(private layout: LayoutService,private cartService: CartService) {}
 
   ngOnInit(): void {
     this.headerLeft = this.layout.getProp('header.left') as string;
+    this.cartService.getProduct()
+    .subscribe(res =>{
+      this.totalItem=res.length;
+    })
+
   }
 }
