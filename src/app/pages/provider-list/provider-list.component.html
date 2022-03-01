@@ -1,13 +1,13 @@
 <div class="d-flex flex-wrap flex-stack mb-6">
     <h3 class="fw-bolder my-2">
       Provider's list
-      <span class="fs-6 text-gray-400 fw-bold ms-1">({{providers.length}})</span>
+      <span class="fs-6 text-gray-400 fw-bold ms-1">({{provider.length}})</span>
     </h3>
-   
+    {{provider.length}}
   </div>
   <!-- <app-tables-widget12 class="card mb-5 mb-xl-8"></app-tables-widget12>-->
   
-<!-- begin::Body -->
+<!-- begin::Body -->fghmjùk
 <div class="card-body py-3">
   <!-- begin::Table container -->
   <div class="table-responsive">
@@ -27,7 +27,7 @@
       <!-- end::Table head -->
       <!-- begin::Table body -->
       <tbody>
-        <tr *ngFor=" let provider of providers">
+        <tr *ngFor=" let p of provider">
           <td>
             <div class="d-flex align-items-center">
               <div class="symbol symbol-50px me-5">
@@ -44,7 +44,7 @@
                   href="providerdetails"
                   class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
                 >
-                {{provider.name}}
+                {{p.name}}
                 </a>
                 <span class="text-muted fw-bold text-muted d-block fs-7">
                   {{provider.descrip}}
