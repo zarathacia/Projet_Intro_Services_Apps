@@ -1,22 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4" *ngFor="let item of itemList">
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4" *ngFor="let item of productList">
       <div class="card" tabindex="0">
         <div class="card-image" >
-          <img src="{{item.ImageUrl}}" alt="">
+          <img src="{{item.imageUrl}}" alt="">
         </div>
         <div class="card-content">
-          <p class="kicker">{{item.Type1}}</p>
-          <h2>{{item.ItemName}}</h2>
-          <p>{{formatDescription(item.Description)}}</p>
+          <!--<p class="kicker">{{item.Type1}}</p>!-->
+          <h2>{{item.name}}</h2>
+          <p>{{formatDescription(item.description)}}</p>
         </div>
         <div class="buy d-flex justify-content-between align-items-center">
-          <div class="price text-success"><h5 class="mt-4">{{item.Price}} DT</h5></div>
-            <a routerLink="/product" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+          <div class="price text-success"><h5 class="mt-4">{{item.price}} DT</h5></div>
+            <a  class="btn btn-danger mt-3" (click)="addtoCart(item)"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
           </div>
 
         <div class="card-footer">
-          <a href="#" routerLink="/product/{{item.ItemId}}" role="button">
+          <a href="#" routerLink="/product/{{item.id}}" role="button">
             <span>Read More</span>
           </a>
           <svg class="icon" viewBox="0 0 16 16">
@@ -31,3 +31,6 @@
 
   </div>
 </div>
+<div>rani ne5dem</div>
+
+
