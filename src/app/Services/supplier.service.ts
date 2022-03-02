@@ -11,7 +11,7 @@ export class SupplierService {
   constructor(private http:HttpClient) { }
 
   getSuppliers(): Observable<any>{
-    return this.http.get<any>("http://localhost:8080/api/product/getall")
+    return this.http.get<any>("http://localhost:8080/api/supplier/getall")
     .pipe(map((res:any)=>{
       console.log(res);
       return res;

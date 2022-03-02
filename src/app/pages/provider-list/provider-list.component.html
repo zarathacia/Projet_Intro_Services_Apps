@@ -3,11 +3,10 @@
       Provider's list
       <span class="fs-6 text-gray-400 fw-bold ms-1">({{provider.length}})</span>
     </h3>
-    {{provider.length}}
   </div>
   <!-- <app-tables-widget12 class="card mb-5 mb-xl-8"></app-tables-widget12>-->
   
-<!-- begin::Body -->fghmjùk
+<!-- begin::Body -->
 <div class="card-body py-3">
   <!-- begin::Table container -->
   <div class="table-responsive">
@@ -33,7 +32,7 @@
               <div class="symbol symbol-50px me-5">
                 <span class="symbol-label bg-light">
                   <img
-                    src={{provider.imglink}}
+                    src={{p.imageUrl}}
                     class="h-75 align-self-end"
                     alt=""
                   />
@@ -44,37 +43,37 @@
                   href="providerdetails"
                   class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
                 >
-                {{p.name}}
+                {{p.supplierName}}
                 </a>
                 <span class="text-muted fw-bold text-muted d-block fs-7">
-                  {{provider.descrip}}
+                  {{p.bio}}
                 </span>
               </div>
             </div>
           </td>
           <td>
             <a
-              href="#"
+              href="providerdetails"
               class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
             >
-            {{provider.type}}
+            {{p.suppliertype}}
             </a>
             
           </td>
           <td>
             <a
-              href="#"
+              href="providerdetails"
               class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
             >
-            Yes
+            {{p.delivery}}
             </a>
           </td>
           <td>
             <a
-              href="#"
+              href="providerdetails"
               class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
             >
-            {{provider.adresse}}
+            {{p.id}}
             </a>
           </td>
           <td>
