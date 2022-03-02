@@ -15,6 +15,7 @@ import { environment } from 'src/environments/environment';
 import { FakeAPIService } from './_fake/fake-api.service';
 
 
+
 function appInitializer(authService: AuthService) {
   return () => {
     return new Promise((resolve) => {

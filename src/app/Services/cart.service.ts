@@ -17,10 +17,20 @@ export class CartService {
     this.productList.next(product);
   }
   addtoCart(product:any){
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
-    this.getTotalPrice();
-    console.log(this.cartItemList)
+    let producExist = false;
+    for(let i in this.cartItemList){
+      if(this.cartItemList[i].id==product.id){
+        this.cartItemList[i].quantity++;
+        this.cartItemList[i].total=this.cartItemList[i].price*this.cartItemList[i].quantity;
+        producExist=true;
+        break;
+      }
+    }
+    if(!producExist){
+      this.cartItemList.push(product);
+      this.productList.next(this.cartItemList);
+      this.getTotalPrice();
+    }
   }
   getTotalPrice():number{
     let grandTotal = 0;

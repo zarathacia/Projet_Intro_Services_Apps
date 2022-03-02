@@ -1,59 +1,96 @@
 <ng-container *ngIf="products.length !=0">
-    <div class="container">
-        <div class="card-table">
-            <div class="card-product">
-                <table class="table table-responsive">
-                    <thead>
-                        <tr>
-                            <th>Sr.No</th>
-                            <th>Product Name</th>
-                            <th>Product Image</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>Action</th>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of products; let i = index">
-                            <td>{{i+1}}</td>
-                            <td>{{item.name}}</td>
-                            <td><img style="width:120px" src="{{item.imageUrl}}" alt=""></td>
-                            <td style="width:25%">{{item.description}}</td>
-                            <td style="width:12%">{{item.price}}</td>
-                            <td style="width:12%">{{item.quantity}}</td>
-                            <td style="width:12%">{{item.total}}</td>
-                            <td>
-                                <button (click)="removeItem(item)" class="btn btn-danger"><img class="delete" src="./assets/media/icons/duotune/delete.svg" alt=""></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="4"></td>
-                            <td><button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button></td>
-                            <td><button routerLink="/item" class="btn btn-primary">Shop More</button></td>
-                            <td><button class="btn btn-success">Get Estimate</button></td>
-                            <td><strong>Total: {{grandTotal}} DT</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container padding-bottom-3x mb-1">
+    <!-- Alert-->
+    <div class="alert alert-info alert-dismissible fade show text-center" style="margin-bottom: 30px;">
+        <strong>Cart</strong>
     </div>
+    <!-- Shopping Cart-->
+    <div class="table-responsive shopping-cart">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><h3><strong>Product</strong></h3></th>
+                    <th class="text-center"><h3><strong>Quantity</strong></h3></th>
+                    <th class="text-center"><h3><strong>Price</strong></h3></th>
+                    <th class="text-center"><h3><strong>Subtotal</strong></h3></th>
+                    <th class="text-center"><a class="btn btn-sm btn-outline-danger" (click)="emptyCart()">Clear Cart</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of products">
+                    <td>
+                        <div class="product-item">
+                            <a class="product-thumb"><img src="{{item.imageUrl}}" alt="Product"></a>
+                            <div class="product-info">
+                                <h4 class="product-title"><a>{{item.name}}</a></h4>
+                                <span>{{item.description}}</span><span><em>Stock :</em> {{item.stock}}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <div class="count-input">
+                            <input class="form-control" value="{{item.quantity}}">
+                        </div>
+                    </td>
+                    <td class="text-center text-lg text-medium">{{item.price}} TND</td>
+                    <td class="text-center text-lg text-medium">{{item.price*item.quantity}} TND</td>
+                    <td class="text-center"><a class="remove-from-cart" (click)="removeItem(item)" data-toggle="tooltip" title=""
+                            data-original-title="Remove item"><i class="fa fa-trash"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="shopping-cart-footer">
+        <div class="column">
+            <form class="coupon-form" method="post">
+                <input class="form-control form-control-sm" type="text" placeholder="Supplier Name" required="">
+                <button class="btn btn-outline-primary btn-sm" type="submit">Save</button>
+            </form>
+        </div>
+        <div class="column text-lg"><strong>Subtotal: </strong><span class="text-medium"> {{grandTotal}} TND</span></div>
+    </div>
+    <div class="shopping-cart-footer">
+        <div class="column"><a class="btn btn-info" routerLink="/item"><i
+                    class="icon-arrow-left" ></i>&nbsp;Back to Shopping</a></div>
+        <div class="column"><a class="btn btn-primary"  data-toast="" data-toast-type="success"
+                data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart"
+                data-toast-message="is updated successfully!">Update Cart</a><a class="btn btn-success"
+                >Devis</a></div>
+    </div>
+</div>
 </ng-container>
 
 
 <ng-container *ngIf="products.length==0">
-    <div class="container">
-        <div class="card">
-            <h5 class="card-title">My Cart</h5>
-        </div>
-        <div class="center">
-            <img src="./assets/media/misc/empty_cart.png" alt="">
-            <h4>Your Cart Is Empty</h4>
-            <h6>Add Item To It Now</h6>
-            <button routerLink="/item" class="btn btn-primary">Shop Now</button>
+    <div class="container-fluid mt-100">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Cart</h5>
+                    </div>
+                    <div class="card-body cart">
+                        <div class="col-sm-12 empty-cart-cls text-center"> <img src="https://i.imgur.com/dCdflKN.png"
+                                width="130" height="130" class="img-fluid mb-4 mr-3">
+                            <h3><strong>Your Cart Is Empty</strong></h3>
+                            <h5>Add Item To It Now </h5> <a routerLink="/item"
+                                class="btn btn-primary cart-btn-transform m-3" data-abc="true"> Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
+
 </ng-container>
+
+
+
+
+
+
+
+
+

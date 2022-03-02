@@ -9,9 +9,11 @@ import { map } from 'rxjs/operators';
 export class SupplierService {
 
   constructor(private http:HttpClient) { }
-  getProduct(): Observable<any>{
+
+  getSuppliers(): Observable<any>{
     return this.http.get<any>("http://localhost:8080/api/product/getall")
     .pipe(map((res:any)=>{
+      console.log(res);
       return res;
     }))
   }
