@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/Services/cart.service';
-
+import * as jspdf from 'jspdf';
+import html2canvas  from 'html2canvas';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -12,7 +13,6 @@ export class CartComponent implements OnInit {
   public products :any=[];
   public grandTotal !:number ;
   constructor(private cartService:CartService) { }
-
   ngOnInit(): void {
     this.cartService.getProduct()
     .subscribe(res =>{
@@ -27,6 +27,5 @@ export class CartComponent implements OnInit {
   emptyCart(){
     this.cartService.removeAllCart();
   }
-
-
+  
 }
