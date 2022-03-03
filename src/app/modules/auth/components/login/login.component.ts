@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   submit() {
     this.hasError = false;
-   //this.authService.login(this.f.email.value, this.f.password.value)
+   this.authService.login(this.f.email.value, this.f.password.value)
    //this.router.navigateByUrl('/dashboard')
   }
 
