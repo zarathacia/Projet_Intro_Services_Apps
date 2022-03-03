@@ -69,11 +69,7 @@ export class DashComponent implements OnInit {
         {
           name: 'Revenue',
           data: [
-            122657.88
-            ,99862.15
-,114974.7
-,132006.4
-,152977.71
+        
 ,122797.56
 ,130301.79
 ,98666.599
@@ -96,7 +92,7 @@ export class DashComponent implements OnInit {
       ],
       chart: {
         fontFamily: 'inherit',
-        type: 'bar',
+        type: 'line',
         height: chartHeight,
         toolbar: {
           show: false,
@@ -118,10 +114,28 @@ export class DashComponent implements OnInit {
       stroke: {
         show: true,
         width: 2,
-        colors: ['solid'],
+        colors: ['blue'],
       },
       xaxis: {
-        categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        categories:[ 
+          1992,
+          1993,
+          1994,
+          1995,
+          1996,
+          1997,
+          1998,
+          1999,
+          2000,
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+        
+        ],
         axisBorder: {
           show: false,
         },
