@@ -35,7 +35,7 @@ export class CartComponent implements OnInit {
       var imageData= canvas.toDataURL('image/png')
 
       var doc = new jspdf();
-      doc.addImage(imageData,0,0,208,500)
+      doc.addImage(imageData,0,0,200,100)
       doc.save('image.pdf')
 
 
