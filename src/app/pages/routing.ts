@@ -1,11 +1,18 @@
 import { Routes } from '@angular/router';
 import { ProductComponent } from './product/product.component';
+import { ProviderDetailsComponent } from './provider-details/provider-details.component';
 
 const Routing: Routes = [
   {
     path: 'cart',
     loadChildren: () =>
       import('./cart/cart.modules').then((m) => m.CartModule),
+  },
+  {
+    path :'order',
+    loadChildren: () =>
+      import ('./order/order.modules').then((m) => m.OrderModule)
+ 
   },
   {
     path: 'dashboard',
@@ -57,7 +64,12 @@ const Routing: Routes = [
 
   {
     path:'product/:id',
-    component:ProductComponent
+    component:ProductComponent 
+
+  },
+  {
+    path:'providerdetails/:id',
+    component:ProviderDetailsComponent
 
   },
  /* {
