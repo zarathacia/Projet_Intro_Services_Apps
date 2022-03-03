@@ -1,13 +1,13 @@
 <ng-container *ngIf="products.length !=0">
     
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container padding-bottom-3x mb-1">
+<div class="container padding-bottom-3x mb-1" id="card">
     <!-- Alert-->
     <div class="alert alert-info alert-dismissible fade show text-center" style="margin-bottom: 30px;">
         <strong>Cart</strong>
     </div>
     <!-- Shopping Cart-->
-    <div class="table-responsive shopping-cart">
+    <div class="table-responsive shopping-cart" >
         <table class="table">
             <thead>
                 <tr>
@@ -57,7 +57,7 @@
         <div class="column"><a class="btn btn-primary"  data-toast="" data-toast-type="success"
                 data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart"
                 data-toast-message="is updated successfully!">Update Cart</a><a class="btn btn-success"
-                >Devis</a></div>
+                (click)="generatePDF()">Devis</a></div>
     </div>
 </div>
 </ng-container>

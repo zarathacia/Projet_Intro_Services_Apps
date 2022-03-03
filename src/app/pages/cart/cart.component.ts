@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/Services/cart.service';
-import * as jspdf from 'jspdf';
+import  jspdf from 'jspdf';
 import html2canvas  from 'html2canvas';
 @Component({
   selector: 'app-cart',
@@ -27,5 +27,19 @@ export class CartComponent implements OnInit {
   emptyCart(){
     this.cartService.removeAllCart();
   }
-  
+  generatePDF(){
+    var element: any = document.getElementById('card')
+    html2canvas(element).then((canvas)=>{
+      console.log(canvas)
+
+      var imageData= canvas.toDataURL('image/png')
+
+      var doc = new jspdf();
+      doc.addImage(imageData,0,0,208,500)
+      doc.save('image.pdf')
+
+
+
+    })
+  }
 }
