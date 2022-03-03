@@ -13,11 +13,6 @@ const Routing: Routes = [
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
-    path: 'analytics',
-    loadChildren: () =>
-      import('./analytics/analytics.module').then((m) => m.AnalyticsModule),
-  },
-  {
     path: 'item',
     loadChildren: () =>
       import('./item/item.module').then((m) => m.ItemModule),

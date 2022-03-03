@@ -1,5 +1,5 @@
 <div class="card-header border-0 py-5" [ngClass]="'bg-' + chartColor">
-  <h3 class="card-title fw-bolder text-white">Sales Statistics</h3>
+  <h3 class="card-title fw-bolder text-white">Analytics Made Easy</h3>
   <div class="card-toolbar">
     <!-- begin::Menu -->
     <button
@@ -58,7 +58,7 @@
           [inlineSVG]="'./assets/media/icons/duotune/general/gen032.svg'"
           class="svg-icon svg-icon-3x svg-icon-warning d-block my-2"
         ></span>
-        <a href="#" class="text-warning fw-bold fs-6"> Weekly Sales </a>
+        <a routerLink="/dashboard" class="text-warning fw-bold fs-6"> Analytics </a>
       </div>
       <!-- end::Col -->
       <!-- begin::Col -->
@@ -67,7 +67,7 @@
           [inlineSVG]="'./assets/media/icons/duotune/finance/fin006.svg'"
           class="svg-icon svg-icon-3x svg-icon-primary d-block my-2"
         ></span>
-        <a href="#" class="text-primary fw-bold fs-6"> New Projects </a>
+        <a routerLink="/item" class="text-primary fw-bold fs-6"> Products </a>
       </div>
       <!-- end::Col -->
     </div>
@@ -80,7 +80,7 @@
           [inlineSVG]="'./assets/media/icons/duotune/abstract/abs027.svg'"
           class="svg-icon svg-icon-3x svg-icon-danger d-block my-2"
         ></span>
-        <a href="#" class="text-danger fw-bold fs-6 mt-2"> Item Orders </a>
+        <a href="/providerlist" class="text-danger fw-bold fs-6 mt-2"> Suppliers </a>
       </div>
       <!-- end::Col -->
       <!-- begin::Col -->
@@ -89,7 +89,7 @@
           [inlineSVG]="'./assets/media/icons/duotune/communication/com010.svg'"
           class="svg-icon svg-icon-3x svg-icon-success d-block my-2"
         ></span>
-        <a href="#" class="text-success fw-bold fs-6 mt-2"> Bug Reports </a>
+        <a routerLink="/dashboard/news" class="text-success fw-bold fs-6 mt-2"> News </a>
       </div>
       <!-- end::Col -->
     </div>

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from 'src/app/services/analyticsService';
+import { NewsService } from 'src/app/services/newsService';
 import { Data } from 'src/app/services/DataModels/data';
 import { Engrais } from 'src/app/services/DataModels/engrais';
+import { News } from 'src/app/services/DataModels/news';
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -9,24 +11,21 @@ import { Engrais } from 'src/app/services/DataModels/engrais';
 })
 
 export class NewsComponent implements OnInit {
-  engrais: Engrais[] =[]; 
+  news:any=[]; 
   count: any;   
-  constructor(private analyticsService: AnalyticsService) { }
+  constructor(private analyticsService: AnalyticsService,private newsService: NewsService) { }
   
   ngOnInit(): void {
 
-    this.analyticsService.getEngrais().subscribe((resp: Data) => {
-      this.engrais = resp.result.records;
-      this.count=this.engrais.length;
-      console.log( typeof(resp));
-      console.log(this.engrais[0]);
-    });
+    this.newsService.getNews().subscribe((resp: News) => {
+      this.news = resp.articles;
 
-    /*this.engrais=this.analyticsService.getEngrais(this.engrais)
-    console.log(this.engrais);
-    console.log(this.engrais);
-    console.log("I am here");  */
+      this.count=this.news.length;
+      console.log(this.news[0]['title']);
+    });
     
   }
 
+
+  
 }
