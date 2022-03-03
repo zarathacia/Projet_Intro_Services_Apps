@@ -1,96 +1,33 @@
-<!-- begin::Header -->
-<div class="card-header border-0 pt-5">
-  <h3 class="card-title align-items-start flex-column">
-    <span class="card-label fw-bolder fs-3 mb-1">Engrais en tunisie</span>
-    <span class="text-muted mt-1 fw-bold fs-7">Plus de {{this.count}} engrais</span>
-  </h3>
-</div>
-<!-- end::Header -->
-<!-- begin::Body -->
-<div class="card-body py-3">
-  <!-- begin::Table container -->
-  <div class="table-responsive">
-    <!-- begin::Table -->
-    <table
-      class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3"
-    >
-      <!-- begin::Table head -->
-      <thead>
-        <tr class="fw-bolder text-muted">
-          <th class="w-25px">
-            <div
-              class="
-                form-check form-check-sm form-check-custom form-check-solid
-              "
-            >
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value="1"
-                data-kt-check="true"
-                data-kt-check-target=".widget-13-check"
-              />
-            </div>
-          </th>
-          <th > _id</th>
-          <th >composante_ar:</th>
-          <th >frequence</th>
-          <th >source</th>
-          <th >unite</th>
-        </tr>
-      </thead>
-      <!-- end::Table head -->
-      <!-- begin::Table body -->
-      <tbody>
-        <div *ngFor=" let p of this.engrais; let i=index;" >
-        <tr>
-          <td>
-            <div class="form-check form-check-sm form-check-custom form-check-solid">
-              <input class="form-check-input widget-13-check" type="checkbox" value={{i}}/>
-            </div>
-          </td>
-          <td>
-            <a class="text-dark fw-bolder text-hover-primary fs-6">
-              {{this.engrais[i]["_id"]}} 
-            </a>
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
-            >
-            {{this.engrais[i]["composante_ar"]}} 
-            </a>
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
-            >
-            {{this.engrais[i]["frequence"]}} 
-            </a>
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
-            >
-            {{this.engrais[i]["source"]}}             
-          </a>
 
-          </td>
+<div *ngFor=" let p of this.news; let i=index">
+  
+<div class="blog-card">
+  <div class="meta">
 
-          <td>
-            <span class="badge badge-light-success">{{this.engrais[i]["unite"]}} </span>
-          </td>
-
-        </tr>
-      </div>
-      </tbody>
-      <!-- end::Table body -->
-    </table>
-    <!-- end::Table -->
+    <div class="photo" style="background-image: url(assets/media/articlePlaceholder.png)">
+    
+    </div>
+    <ul class="details">
+      <li class="author"><a href="#">John Doe</a></li>
+      <li class="date">Aug. 24, 2015</li>
+      <li class="tags">
+        <ul>
+          <li><a href="#">Learn</a></li>
+          <li><a href="#">Code</a></li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+        </ul>
+      </li>
+    </ul>
   </div>
-  <!-- end::Table container -->
+  <div class="description">
+    <h1>{{p['title']}}</h1>
+    <h2>Source: {{p['source']['name']}}</h2>
+    <p>{{p['description']}}</p>
+    <p class="read-more">
+      <a href="{{p['url']}}">Read More</a>
+    </p>
+  </div>
 </div>
-<!-- begin::Body -->
+
+</div>

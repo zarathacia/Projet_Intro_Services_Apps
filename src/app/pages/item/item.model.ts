@@ -4,9 +4,6 @@ export class item{
     public ImageUrl:string;
     public Price:number;
     public Description:string;
-    public Provider:string;
-    public Reference : string;
-    public Disponibilité :string;
     public Type1:string;
-    public Type2:string ;
+    
 }

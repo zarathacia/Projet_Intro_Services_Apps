@@ -30,8 +30,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('i am here')
-    console.log('i am finish')
 
     ;}
 }

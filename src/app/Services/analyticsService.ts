@@ -7,6 +7,7 @@ import { Data } from './DataModels/data';
 
 const endpoint = 'http://localhost:3000/api/v1/';
 
+
 const agridataEndpoint="http://agridata.tn/fr/api/3/action/datastore_search_sql?sql="
 const engraisDataset="%227ea488c6-ed1d-4005-8239-b40125897d7a%22"
 const sql="SELECT%20*%20from%20"+ engraisDataset
@@ -44,7 +45,7 @@ export class AnalyticsService {
   constructor(private http: HttpClient) {}
   
   public getEngrais(){ 
-
+    console.log("GetENgrais ")
   return this.http.get<Data>(agridataEndpoint + sql).pipe(
       catchError(this.handleError)
     );
@@ -65,15 +66,3 @@ export class AnalyticsService {
     return throwError(msg);
   }
 }
-
-
-/*fetch(agridataEndpoint + sql)
-.then(res => res.json())
-.then((out) => {
-  console.log('Checkout this JSON! ', engrais=JSON.parse(out['result']['records']));
-})
-.catch(err => { throw err });
-console.log(engrais)
-return engrais
-//console.log(agridataEndpoint + sql)
-*/

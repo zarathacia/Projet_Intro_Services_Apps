@@ -28,7 +28,7 @@ function getChartOptions(
 ) {
   const labelColor = getCSSVariableValue('--bs-gray-500');
   const borderColor = getCSSVariableValue('--bs-gray-200');
-  const color = getCSSVariableValue('--bs-' + chartColor);
+  const color = getCSSVariableValue('--bs-gray-200');
 
   return {
     series: [

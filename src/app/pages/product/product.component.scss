@@ -22,6 +22,8 @@ a:hover {
     border-radius: 20px;
     margin: 27px 50px;
     box-shadow: 0 0 15px 2px rgba(0,0,0,0.1);
+    height:auto;
+    width:1000px;
 }
 .row1 {
     display: flex;
@@ -116,11 +118,7 @@ a:hover {
     font-weight: 700;
     margin-right: 10px;
 }
-.price span:last-child {
-    color: rgb(117, 117, 117);
-    text-decoration: line-through;
-    font-size: 19px;
-}
+
 .reviews {
     display: flex;
     margin: 16px 0;
