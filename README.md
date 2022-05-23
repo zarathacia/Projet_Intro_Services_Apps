@@ -1,4 +1,7 @@
-# Demo1
+# Agricolys
+An analytics Dashboard made for the purpose of helping farmers and agriculture enthusiasts make better decision concerning there crops using a BI dashboard and an e commerce solution that contains farming goods.
+This front end app consumes the API in this repository: [https://github.com/zarathacia/Projet_Intro_Services_Apps](https://github.com/zarathacia/Projet_Intro_Services_Back)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
@@ -25,4 +28,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# Projet_Intro_Services_Apps
+
