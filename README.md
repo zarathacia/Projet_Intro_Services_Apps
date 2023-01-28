@@ -1,6 +1,6 @@
 # Agricolys
 An analytics Dashboard made for the purpose of helping farmers and agriculture enthusiasts make better decision concerning there crops using a BI dashboard and an e commerce solution that contains farming goods.
-This front end app consumes the API in this repository: [https://github.com/zarathacia/Projet_Intro_Services_Apps](https://github.com/zarathacia/Projet_Intro_Services_Back)
+This front end app consumes the API in this repository: [https://github.com/zarathacia/Projet_Intro_Services_Back](https://github.com/zarathacia/Projet_Intro_Services_Back)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
